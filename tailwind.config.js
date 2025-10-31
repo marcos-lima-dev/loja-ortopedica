@@ -1,14 +1,22 @@
 // tailwind.config.js
-import { defineConfig } from 'tailwindcss'
-
-export default defineConfig({
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
+      colors: {
+        // 🎨 Cores personalizadas do Footer
+        'footer-bg': '#4C4C4C',       // cor principal (parte superior) — exata do Figma
+        'footer-bottom': '#3E3E3E',   // faixa inferior (barra de direitos autorais)
+      },
       fontFamily: {
-        raleway: ['Raleway', 'sans-serif'],
+        // 🖋️ Fonte global
+        roboto: ['Roboto', 'sans-serif'],
       },
     },
   },
   plugins: [],
-})
+}
