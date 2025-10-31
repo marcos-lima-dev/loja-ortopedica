@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Banner from './components/Banner'
 import FamiliesSection from './components/FamiliesSection'
 import Divider from './components/Divider'
+import ProductsSection from './components/ProductsSection'
 
 function App() {
   return (
@@ -10,8 +11,8 @@ function App() {
       <Header />
       <Banner />
       <FamiliesSection />
-      <Divider /> {/* DIVISOR AQUI */}
-      {/* Próximas seções */}
+      <Divider className="mt-8" /> {/* ESPAÇAMENTO PEQUENO AQUI */}
+      <ProductsSection />
     </div>
   )
 }
