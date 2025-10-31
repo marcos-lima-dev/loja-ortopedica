@@ -1,46 +1,57 @@
 // src/components/ProductsSection.tsx
 import { Search, ChevronDown } from 'lucide-react'
+import ProductCard from './ProductCard'
 
 export default function ProductsSection() {
+  const products = [
+    { imageUrl: '/images/modelo-a.png', title: 'Órtese Soft Curta com Polegar', code: 'OR1065', isNew: true },
+    { imageUrl: '/images/modelo-b.png', title: 'Órtese Soft Curta sem Polegar', code: 'OR1066', isNew: false },
+    { imageUrl: '/images/modelo-c.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: false },
+    { imageUrl: '/images/modelo-d.png', title: 'Órtese Soft Curta com Polegar', code: 'OR1065', isNew: true },
+    { imageUrl: '/images/modelo-a.png', title: 'Órtese Soft Curta sem Polegar', code: 'OR1066', isNew: false },
+    { imageUrl: '/images/modelo-b.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: true },
+  ]
+
   return (
-    <section className="mt-16"> {/* ~64px de espaço após o divisor */}
+    <section className="mt-16">
       <div className="flex gap-8">
         {/* FILTROS LATERAIS */}
         <aside 
-          className="w-[306px] h-[325px] bg-white rounded-lg border border-[#D5D7D8] p-6"
+          className="w-[306px] h-[325px] bg-white rounded-[10px] border border-[#D5D7D8] p-6"
           style={{ marginLeft: '86px' }}
         >
-          <h3 className="font-raleway font-semibold text-lg mb-4">Filtros</h3>
+          <h3 className="font-raleway font-medium text-[16px] leading-[20px] text-gray-900 mb-6">
+            Filtros
+          </h3>
           
-          <div className="space-y-4">
-            <div>
-              <button className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700">
-                <span>Lançamentos</span>
+          <div className="space-y-6">
+            <div className="bg-[#F8F8F8] rounded-lg p-4">
+              <button className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700 transition">
+                <span className="text-sm font-medium">Lançamentos</span>
               </button>
             </div>
 
-            <div className="border-t pt-4">
-              <button className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700">
-                <span>Famílias/Tecnologias</span>
+            <div className="bg-[#F8F8F8] rounded-lg p-4">
+              <button className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700 transition">
+                <span className="text-sm font-medium">Famílias/Tecnologias</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
             </div>
 
-            <div className="border-t pt-4">
-              <button className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700">
-                <span>Produtos</span>
+            <div className="bg-[#F8F8F8] rounded-lg p-4">
+              <button className="flex items-center justify-between w-full text-left text-gray-700 hover:text-purple-700 transition">
+                <span className="text-sm font-medium">Produtos</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
             </div>
           </div>
         </aside>
 
-        {/* ÁREA PRINCIPAL: CONTADOR + BUSCA + GRID */}
+        {/* ÁREA PRINCIPAL */}
         <div className="flex-1">
-          {/* CONTADOR + BUSCA + BOTÃO */}
           <div 
             className="w-[864px] h-[40px] flex items-center justify-between mb-8"
-            style={{ marginLeft: '24px' }} // 416px - 86px - 306px - gap
+            style={{ marginLeft: '24px' }}
           >
             <div className="flex items-center gap-4">
               <span className="text-gray-700">86 produtos</span>
@@ -62,9 +73,20 @@ export default function ProductsSection() {
             </button>
           </div>
 
-          {/* GRID DE PRODUTOS (vazio por enquanto) */}
-          <div className="grid grid-cols-3 gap-6">
-            {/* Cards virão aqui */}
+          {/* GRID DE PRODUTOS */}
+          <div 
+            className="grid grid-cols-3 gap-6 w-[864px]"
+            style={{ marginLeft: '24px' }}
+          >
+            {products.map((product, index) => (
+              <ProductCard
+                key={index}
+                imageUrl={product.imageUrl}
+                title={product.title}
+                code={product.code}
+                isNew={product.isNew}
+              />
+            ))}
           </div>
         </div>
       </div>
