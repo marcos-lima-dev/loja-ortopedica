@@ -1,15 +1,19 @@
 // src/components/ProductsSection.tsx
-import { Search, ChevronDown } from 'lucide-react'
+import { Search, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
 import ProductCard from './ProductCard'
 
 export default function ProductsSection() {
   const products = [
     { imageUrl: '/images/modelo-a.png', title: 'Órtese Soft Curta com Polegar', code: 'OR1065', isNew: true },
     { imageUrl: '/images/modelo-b.png', title: 'Órtese Soft Curta sem Polegar', code: 'OR1066', isNew: false },
-    { imageUrl: '/images/modelo-c.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: false },
-    { imageUrl: '/images/modelo-d.png', title: 'Órtese Soft Curta com Polegar', code: 'OR1065', isNew: true },
-    { imageUrl: '/images/modelo-a.png', title: 'Órtese Soft Curta sem Polegar', code: 'OR1066', isNew: false },
-    { imageUrl: '/images/modelo-b.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: true },
+    { imageUrl: '/images/modelo-c.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: true },
+    { imageUrl: '/images/modelo-d.png', title: 'Órtese Soft Curta com Polegar', code: 'OR1065', isNew: false },
+    { imageUrl: '/images/modelo-a.png', title: 'Órtese Soft Curta sem Polegar', code: 'OR1066', isNew: true },
+    { imageUrl: '/images/modelo-b.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: false },
+    // NOVA LINHA: +3 cards (total 9, mas grid 3x3 = 9, mas você pediu mais uma linha, então 6 é bom)
+    { imageUrl: '/images/modelo-c.png', title: 'Órtese Soft Curta com Polegar', code: 'OR1065', isNew: true },
+    { imageUrl: '/images/modelo-d.png', title: 'Órtese Soft Curta sem Polegar', code: 'OR1066', isNew: false },
+    { imageUrl: '/images/modelo-a.png', title: 'Órtese Safe Air', code: 'OR1051', isNew: true },
   ]
 
   return (
@@ -73,9 +77,9 @@ export default function ProductsSection() {
             </button>
           </div>
 
-          {/* GRID DE PRODUTOS */}
+          {/* GRID DE PRODUTOS - 3 linhas (9 cards) */}
           <div 
-            className="grid grid-cols-3 gap-6 w-[864px]"
+            className="grid grid-cols-3 gap-6 w-[864px] mb-8"
             style={{ marginLeft: '24px' }}
           >
             {products.map((product, index) => (
@@ -87,6 +91,42 @@ export default function ProductsSection() {
                 isNew={product.isNew}
               />
             ))}
+          </div>
+
+          {/* PAGINAÇÃO FAKE */}
+          <div 
+            className="flex items-center justify-center gap-2 w-[864px]"
+            style={{ marginLeft: '24px' }}
+          >
+            <button className="p-2 hover:bg-gray-100 rounded-full transition">
+              <ChevronLeft className="w-5 h-5 text-gray-600" />
+            </button>
+            
+            <button className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition">
+              1
+            </button>
+            <button className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition">
+              2
+            </button>
+            <button className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition">
+              3
+            </button>
+            <button className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition">
+              4
+            </button>
+            <button className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition">
+              5
+            </button>
+            
+            <span className="px-3 py-2 text-sm text-gray-400">...</span>
+            
+            <button className="px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded transition">
+              10
+            </button>
+            
+            <button className="p-2 hover:bg-gray-100 rounded-full transition">
+              <ChevronRight className="w-5 h-5 text-gray-600" />
+            </button>
           </div>
         </div>
       </div>
