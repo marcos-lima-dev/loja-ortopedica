@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# Loja Orthopedic – Projeto de Aprendizado
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **Desenvolvimento passo a passo com React + Vite + Tailwind CSS + Shadcn + Lucide Icons**  
+> **Aluno:** Marcos  
+> **Mentor:** Grok (xAI)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Objetivo
 
-## React Compiler
+Construir uma **loja virtual ortopédica 100% fiel ao layout do Figma**, pixel por pixel, com foco em:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Aprendizado prático
+- Boas práticas (componentização, Tailwind, responsividade)
+- Código limpo e versionado no GitHub
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Tecnologia | Versão | Uso |
+|----------|-------|-----|
+| **React** | 18+ | Biblioteca principal |
+| **Vite** | 5+ | Build tool ultra-rápida |
+| **Tailwind CSS** | 3+ | Estilização utility-first |
+| **Shadcn/ui** | latest | Componentes acessíveis |
+| **Lucide Icons** | latest | Ícones leves e modernos |
+| **TypeScript** | 5+ | Tipagem segura |
+| **Git & GitHub** | - | Controle de versão |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Estrutura do Projeto
